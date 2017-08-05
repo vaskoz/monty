@@ -33,17 +33,17 @@ func TestMain(t *testing.T) {
 	exit = realExit
 }
 
-func BenchmarkMain(b *testing.B) {
-	realExit := exit
-	exit = func(code int) {}
-	for i := 0; i < b.N; i++ {
-		for _, c := range testcases {
-			os.Args = c.in
-			flag.CommandLine = flag.NewFlagSet(os.Args[0], flag.ExitOnError)
-			buff := new(bytes.Buffer)
-			stdout = buff
-			main()
-		}
-	}
-	exit = realExit
-}
+//func BenchmarkMain(b *testing.B) {
+//realExit := exit
+//exit = func(code int) {}
+//for i := 0; i < b.N; i++ {
+//for _, c := range testcases {
+//os.Args = c.in
+//flag.CommandLine = flag.NewFlagSet(os.Args[0], flag.ExitOnError)
+//buff := new(bytes.Buffer)
+//stdout = buff
+//main()
+//}
+//}
+//exit = realExit
+//}
