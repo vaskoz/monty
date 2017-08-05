@@ -23,7 +23,7 @@ func New(doors, reveals, games int) Simulator {
 }
 
 func (s *simulator) Run() (int, int, int) {
-	result := make(chan game.Outcome)
+	result := make(chan game.Outcome, len(s.gameList))
 	for _, g := range s.gameList {
 		go func(g game.Game) {
 			result <- g.Run()
