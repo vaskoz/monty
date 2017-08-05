@@ -1,11 +1,11 @@
 package simulate
 
 import (
-	"os"
 	"testing"
 )
 
 func TestSimulateRun(t *testing.T) {
-	sim := New(3, 1, 1, os.Stdout)
+	games := 10000
+	sim := New(3, 1, games)
 	sim.Run()
 }

@@ -25,6 +25,9 @@ func main() {
 		logger.Println("exiting")
 		exit(1)
 	}
-	simulator := simulate.New(*doors, *reveals, *games, stdout)
-	simulator.Run()
+	simulator := simulate.New(*doors, *reveals, *games)
+	first, second, none := simulator.Run()
+	logger.Println("First choice wins:", first)
+	logger.Println("Second choice wins:", second)
+	logger.Println("Didn't win:", none)
 }
