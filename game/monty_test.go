@@ -3,8 +3,8 @@ package game
 import "testing"
 
 func TestGameRun(t *testing.T) {
-	for i := 0; i < 12; i++ {
-		g := New(100, 98)
+	for i := 0; i < 1000; i++ {
+		g := New(4, 1)
 		g.Run()
 	}
 }
