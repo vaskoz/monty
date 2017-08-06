@@ -9,10 +9,12 @@ import (
 	"github.com/vaskoz/monty/simulate"
 )
 
+const loggerPrefix = "monty-"
+
 var stdin io.Reader = os.Stdin
 var stdout io.Writer = os.Stdout
 var stderr io.Writer = os.Stderr
-var logger *log.Logger = log.New(stderr, "monty", log.LstdFlags)
+var logger *log.Logger = log.New(stderr, loggerPrefix, log.LstdFlags)
 var exit func(int) = os.Exit
 
 func main() {
