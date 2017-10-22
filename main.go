@@ -14,8 +14,8 @@ const loggerPrefix = "monty-"
 var stdin io.Reader = os.Stdin
 var stdout io.Writer = os.Stdout
 var stderr io.Writer = os.Stderr
-var logger *log.Logger = log.New(stderr, loggerPrefix, log.LstdFlags)
-var exit func(int) = os.Exit
+var logger = log.New(stderr, loggerPrefix, log.LstdFlags)
+var exit = os.Exit
 
 func main() {
 	doors := flag.Int("doors", 3, "how many doors in the game")
