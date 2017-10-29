@@ -4,6 +4,7 @@ import (
 	"github.com/vaskoz/monty/game"
 )
 
+// Simulator executes multiple Monty-Hall games concurrently
 type Simulator interface {
 	Run() (int, int, int)
 }
@@ -12,6 +13,7 @@ type simulator struct {
 	gameList []game.Game
 }
 
+// New creates a simulator that executes the games concurrently
 func New(doors, reveals, games int) Simulator {
 	gameList := make([]game.Game, games)
 	for i := 0; i < games; i++ {

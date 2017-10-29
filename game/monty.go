@@ -5,14 +5,19 @@ import (
 	"time"
 )
 
+// Outcome enumerates the possible simulation results
 type Outcome int
 
 const (
+	// FirstPickWon is the outcome if the first choice was the correct choice
 	FirstPickWon Outcome = iota
+	// SecondPickWon is the outcome if switching won the game
 	SecondPickWon
+	// NoPickWon is if neither the first pick nor the second pick would have won
 	NoPickWon
 )
 
+// Game is how a client runs a simulation of the Monty-Hall problem
 type Game interface {
 	Run() Outcome
 }
@@ -22,6 +27,7 @@ type game struct {
 	generator      *rand.Rand
 }
 
+// New constructs a Monty-Hall simulation
 func New(doors, reveals int) Game {
 	return &game{
 		doors:     doors,
