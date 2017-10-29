@@ -11,8 +11,6 @@ import (
 
 const loggerPrefix = "monty-"
 
-var stdin io.Reader = os.Stdin
-var stdout io.Writer = os.Stdout
 var stderr io.Writer = os.Stderr
 var logger = log.New(stderr, loggerPrefix, log.LstdFlags)
 var exit = os.Exit
